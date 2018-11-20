@@ -6,12 +6,39 @@ import Happy from './components/Happy';
 import Sleepy from './components/Sleepy';
 import Guilty from './components/Guilty';
 
-// your code goes here
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import { router } from 'sw-toolbox';
+
+
+function About() {
+
+}
+
 class Home extends Component{
   render(){
-    return(
-      // your code goes here
-    )
+    return <div>
+        <Router>
+          <div>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>{" "}
+              </li>
+              <li>
+                <Link to="/Happy">Happy</Link>{" "}
+              </li>
+              <li>
+                <Link to="/Guilty">Guilty</Link>{" "}
+              </li>
+              <li>
+                <Link to="/Sleepy">Sleepy</Link>{" "}
+              </li>
+            </ul>
+            <Route path="/Happy" component={Happy} />
+            <Route path="/Guilty" component={Guilty} />
+            <Route path="/Sleepy" component={Sleepy} />
+          </div>
+        </Router>
+      </div>;
   }
 }
 
