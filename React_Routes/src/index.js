@@ -10,10 +10,6 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import { router } from 'sw-toolbox';
 
 
-function About() {
-
-}
-
 class Home extends Component{
   render(){
     return <div>
